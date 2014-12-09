@@ -1,0 +1,14 @@
+PODS:
+  - SocialInvite (0.1.0)
+
+DEPENDENCIES:
+  - SocialInvite (from `../`)
+
+EXTERNAL SOURCES:
+  SocialInvite:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SocialInvite: e8851fbd98669aad0b18e4869b6f0281624a19fd
+
+COCOAPODS: 0.35.0
