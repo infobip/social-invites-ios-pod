@@ -1,0 +1,1 @@
+PODS_SOCIALINVITE_SOCIALINVITE_OTHER_LDFLAGS = -framework "AddressBook" -framework "CoreData" -framework "CoreGraphics" -framework "CoreTelephony" -framework "MobileCoreServices" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit"
