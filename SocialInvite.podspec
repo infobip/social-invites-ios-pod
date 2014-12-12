@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SocialInvite"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "iOS library which enables you to use the Infobip Social Invites service."
   s.description      = <<-DESC
                        This project is an iOS library which can be merged with your iOS project and enables you to use the Infobip Social Invites service.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
                        A mobile phone address book is stocked with contacts with whom the user has developed a personal relationship.
                        DESC
-  s.homepage         = "http://socialinvite.infobip.com/"
+  s.homepage         = "https://github.com/infobip/social-invites-ios-pod"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Infobip - Framework Integration Team" => "social.invites@infobip.com" }
