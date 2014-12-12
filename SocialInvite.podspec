@@ -31,9 +31,16 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes'
   s.resources = 'Pod/Assets/*.bundle'
 
+  # s.resource_bundles = {
+  #   'Resources' => ['Pod/Assets/*.bundle']
+  # }
+
   s.xcconfig = { 'OTHER_LDFLAGS' => '-all_load' }
   s.public_header_files = 'Pod/Classes/InfobipSocialInvite.h'	
-  s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'CoreData', 'CoreTelephony', 'AddressBook', 'UIKit', 'QuartzCore', 'CoreGraphics'
+  
+  s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'CoreData', 'CoreTelephony'
+  s.frameworks = 'AddressBook', 'UIKit', 'QuartzCore', 'CoreGraphics'
+  
   s.dependency 'RestKit', '~> 0.24'
   s.dependency 'RHAddressBook', '~> 1.1'
   s.dependency 'libPhoneNumber-iOS', '~> 0.7'
