@@ -162,12 +162,12 @@ static RKObjectManager *objectManager;
                                                                                              rootKeyPath:nil
                                                                                                   method:RKRequestMethodAny];
     RKResponseDescriptor *sendInviteResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:sendSmsResponseMapping
-                                                                                                      method:RKRequestMethodGET
+                                                                                                      method:RKRequestMethodPOST
                                                                                                  pathPattern:nil
                                                                                                      keyPath:@"sendSmsResponse"
                                                                                                  statusCodes:[NSIndexSet indexSetWithIndex:200]];
     RKResponseDescriptor *inviteDeliveryResponseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:socialInviteDeliveryMapping
-                                                                                                          method:RKRequestMethodPOST
+                                                                                                          method:RKRequestMethodGET 
                                                                                                      pathPattern:nil
                                                                                                          keyPath:@"deliveryInfoList"
                                                                                                      statusCodes:[NSIndexSet indexSetWithIndex:200]];
@@ -199,7 +199,12 @@ static RKObjectManager *objectManager;
 
 #pragma mark - Social invite
 
-+ (void)sendInviteToRecipients:(NSArray *)recipientsNumber withMessageId:(NSString *)messageId clientData:(NSArray *)clientData successBlock:(IBSIResponseSuccess)successBlock failureBlock:(IBSIResponseFailure)failureBlock {
++ (void)sendInviteToRecipients:(NSArray *)recipientsNumber
+                 withMessageId:(NSString *)messageId
+                    clientData:(NSArray *)clientData
+                  successBlock:(IBSIResponseSuccess)successBlock
+                  failureBlock:(IBSIResponseFailure)failureBlock
+{
     IBSIPerson *person;
     // TODO remove this! Only for Demo App purposes
     if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"invitesEnabled"] boolValue]) {
@@ -268,7 +273,9 @@ static RKObjectManager *objectManager;
 
 #pragma mark - Delivery Report
 
-+ (void)getSocialInviteDeliveryInfoByBulkId:(NSString *)bulkId withSuccessBlock:(IBSIDeliveryResponseSuccess)successBlock failureBlock:(IBSIResponseFailure)failureBlock {
++ (void)getSocialInviteDeliveryInfoByBulkId:(NSString *)bulkId
+                           withSuccessBlock:(IBSIDeliveryResponseSuccess)successBlock
+                               failureBlock:(IBSIResponseFailure)failureBlock {
     
     if (![InfobipSocialInvite deliveryReportEnable]) {
         NSString *errDescription = NSLocalizedString(@"Invitation delivery reports are disabled.", @"");
@@ -495,29 +502,3 @@ static RKObjectManager *objectManager;
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -90,4 +90,4 @@ crashlytics.properties
 crashlytics-build.properties
 
 #EXAMPLE pod
-Example/Pods/
+Example/Pods/*

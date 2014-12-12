@@ -7,6 +7,7 @@
 //
 
 #import "IBViewController.h"
+#import <InfobipSocialInvite.h>
 
 @interface IBViewController ()
 
@@ -17,7 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self setupSI];
 }
 
 - (void)didReceiveMemoryWarning
@@ -26,4 +27,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)siBtn:(id)sender {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    
+    [InfobipSocialInvite startSocialInviteView:self block:^{
+        NSLog(@"%s", __PRETTY_FUNCTION__);
+    }];
+    
+}
+
+
+
+- (void)setupSI
+{
+//    if ([InfobipSocialInvite isLibraryInitialized]) {
+        [InfobipSocialInvite initWithApplicationKey:@"DF11421F70EB7ED882C294C890E7C4EF"
+                                          secretKey:@"573711510e1c002e29679b12c7cb48ae-abb7de3b-f56e-4d1c-b7ed-c5c6058bb679"
+                                   defaultMessageId:@"AAAF082A7C8F39F8A7E14AD2DE84CBEE"
+                          clientListForPlaceholders:[NSArray arrayWithObjects:@"NEVENU",@"SENDER_NAME",@"CUSTOM_TEXT", nil]];
+        
+        [InfobipSocialInvite setSenderId:@"MMM"];
+        [InfobipSocialInvite setMessageEditing:YES];
+//    }
+}
 @end

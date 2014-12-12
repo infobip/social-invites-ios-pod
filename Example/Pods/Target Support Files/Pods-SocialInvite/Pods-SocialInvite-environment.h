@@ -6,6 +6,12 @@
 // project.
 
 
+// AFHTTPRequestOperationLogger
+#define COCOAPODS_POD_AVAILABLE_AFHTTPRequestOperationLogger
+#define COCOAPODS_VERSION_MAJOR_AFHTTPRequestOperationLogger 1
+#define COCOAPODS_VERSION_MINOR_AFHTTPRequestOperationLogger 0
+#define COCOAPODS_VERSION_PATCH_AFHTTPRequestOperationLogger 0
+
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 1
@@ -94,5 +100,5 @@
 #define COCOAPODS_POD_AVAILABLE_libPhoneNumber_iOS
 #define COCOAPODS_VERSION_MAJOR_libPhoneNumber_iOS 0
 #define COCOAPODS_VERSION_MINOR_libPhoneNumber_iOS 7
-#define COCOAPODS_VERSION_PATCH_libPhoneNumber_iOS 3
+#define COCOAPODS_VERSION_PATCH_libPhoneNumber_iOS 5
 

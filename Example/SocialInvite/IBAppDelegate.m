@@ -7,11 +7,21 @@
 //
 
 #import "IBAppDelegate.h"
+#import <AFHTTPRequestOperationLogger/AFHTTPRequestOperationLogger.h>
+#import <RestKit/RestKit.h>
 
 @implementation IBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[AFHTTPRequestOperationLogger sharedLogger] startLogging];
+    
+//    RKLogConfigureByName("RestKit", RKLogLevelError);
+//    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelError);
+//    RKLogConfigureByName("RestKit/Network", RKLogLevelError);
+    
+    RKLogConfigureByName("*", RKLogLevelError);
+    
     // Override point for customization after application launch.
     return YES;
 }

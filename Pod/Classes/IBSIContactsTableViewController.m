@@ -74,7 +74,8 @@ IBSIPerson *actionSheetPerson = nil;
     if ([InfobipSocialInvite messageEditing]) {
         __block IBSIContactsTableViewController *blockSelf = self;
         
-        [InfobipSocialInvite getMessageByMessageId:[InfobipSocialInvite defaultMessageId] withSuccessBlock:^(ClientMobileApplicationMessageResponse *messageResponse) {
+        [InfobipSocialInvite getMessageByMessageId:[InfobipSocialInvite defaultMessageId]
+                                  withSuccessBlock:^(ClientMobileApplicationMessageResponse *messageResponse) {
             [blockSelf setMessageTextWithResponse:messageResponse];
             if ([InfobipSocialInvite defaultMessageWithCustomText] == nil) {
                 blockSelf.editMessage.title = [NSString stringWithFormat:@"✍ %@", [InfobipSocialInvite defaultMessageText]];
@@ -82,7 +83,8 @@ IBSIPerson *actionSheetPerson = nil;
                 blockSelf.editMessage.title = [NSString stringWithFormat:@"✍ %@", [InfobipSocialInvite defaultMessageWithCustomText]];
             }
             blockSelf.navigationController.toolbarHidden = NO;
-        } failureBlock:^(NSError *error) {
+        }
+                                      failureBlock:^(NSError *error) {
             [InfobipSocialInvite getMessageByMessageId:[InfobipSocialInvite defaultMessageId] withSuccessBlock:^(ClientMobileApplicationMessageResponse *messageResponse) {
                 [blockSelf setMessageTextWithResponse:messageResponse];
                 if ([InfobipSocialInvite defaultMessageWithCustomText] == nil) {
