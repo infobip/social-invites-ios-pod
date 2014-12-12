@@ -2,6 +2,17 @@
 
 This project is an iOS library which can be merged with your iOS project and enables you to use the Infobip Social Invites service.
 
+##Installation 
+
+Install SocialInvites with [Cocoapods](http://cocoapods.org/). Just paste next code snippet to Podfile:
+
+	pod 'SocialInvite'
+	
+
+**If you use *Cocoapods* you can skip following block**
+
+```
+
 ## Requirements ##
 
 Include the following files to your project:
@@ -34,6 +45,9 @@ In the Application target under `Build setting -> Linking -> Other Linker Flags`
 
 - `-ObjC`
 - `-all_load`
+
+```
+
 
 ## Application registration
 
