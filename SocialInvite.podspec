@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "SocialInvite"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "iOS library which enables you to use the Infobip Social Invites service."
   s.description      = <<-DESC
                        This project is an iOS library which can be merged with your iOS project and enables you to use the Infobip Social Invites service.
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
   s.author           = { "Infobip - Framework Integration Team" => "social.invites@infobip.com" }
-  s.source           = { :git => "http://mmilivojevic@git/scm/si/social-invites-ios-pod.git" }
+  s.source           = { :git => "https://github.com/infobip/social-invites-ios-pod.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '7.0'
@@ -30,14 +30,11 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes'
   s.resources = 'Pod/Assets/*.bundle'
-
-  s.prefix_header_contents = '#define RH_AB_INCLUDE_GEOCODING 1'
-
+  s.public_header_files = 'Pod/Classes/InfobipSocialInvite.h' 
+  
   s.xcconfig = { 'OTHER_LDFLAGS' => '-all_load' }
-  s.public_header_files = 'Pod/Classes/InfobipSocialInvite.h'	
   
   s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'CoreData', 'CoreTelephony', 'AddressBook', 'UIKit', 'QuartzCore', 'CoreGraphics'
-  
   s.dependency 'RestKit', '~> 0.24'
   s.dependency 'RHAddressBook', '~> 1.1'
   s.dependency 'libPhoneNumber-iOS', '~> 0.7'
