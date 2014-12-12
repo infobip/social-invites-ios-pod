@@ -7,15 +7,11 @@
 //
 
 #import "IBSIInvitationInfo.h"
-#import <CoreTelephony/CTCarrier.h>
-#import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import "IBSIUtils.h"
 #import "IBSIInvite.h"
 #import "IBSIPerson.h"
 #import "IBSIAddressBook.h"
 
-#import "NBPhoneNumberUtil.h"
-#import "NBPhoneNumber.h"
 
 
 @implementation IBSIInvitationInfo

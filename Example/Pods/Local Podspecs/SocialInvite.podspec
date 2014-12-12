@@ -31,14 +31,20 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes'
   s.resources = 'Pod/Assets/*.bundle'
 
-  s.xcconfig = { 'OTHER_LDFLAGS' => '-all_load' }
+# s.compiler_flags = '-RH_AB_INCLUDE_GEOCODING=1'
+
+  s.xcconfig = { 'OTHER_LDFLAGS' => '-all_load', 'GCC_PREPROCESSOR_DEFINITIONS' => 'RH_AB_INCLUDE_GEOCODING=1' }
   s.public_header_files = 'Pod/Classes/InfobipSocialInvite.h'	
+  
   s.frameworks = 'MobileCoreServices', 'SystemConfiguration', 'CoreData', 'CoreTelephony', 'AddressBook', 'UIKit', 'QuartzCore', 'CoreGraphics'
+  
   s.dependency 'RestKit', '~> 0.24'
   s.dependency 'RHAddressBook', '~> 1.1'
   s.dependency 'libPhoneNumber-iOS', '~> 0.7'
+  s.dependency 'CocoaLumberjack', '2.0.0-rc'
 
   s.subspec 'Models' do |models|
     models.source_files = 'Pod/Classes/Models/'
+    models.private_header_files = 'Pod/Classes/Models/_*.h'
   end
 end
